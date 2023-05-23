@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Index"; // Установка заголовка страницы
+}
+
+<head>
+    <link type="text/css" rel="stylesheet" href="/Content/Site.css" /> <!-- Подключение внешнего стиля CSS -->
+    <link type="text/css" rel="stylesheet" href="/Content/QuizStyle.css" /> <!-- Подключение внешнего стиля CSS -->
+    <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css"> <!-- Подключение шрифта Corben -->
+    <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css"> <!-- Подключение шрифта Nobile -->
+</head>
+
+<meta charset="utf-8" /> <!-- Установка кодировки документа -->
+<div id="greeting">Добро пожаловать на страницу с викторинами! Выберите тему:</div> <!-- Приветственное сообщение -->
+
+<body>
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        <!-- Кнопки для выбора темы викторины и перехода к соответствующей странице -->
+        <div class="button-container">
+            <input id="countriesButton" class="custom-button" type="submit" value="Страны" formaction="@Url.Action("Countries","Quiz")" />
+            <input id="animalsButton" class="custom-button" type="submit" value="Животные" formaction="@Url.Action("Animals","Quiz")" />
+            <input id="mathsButton" class="custom-button" type="submit" value="Математика" formaction="@Url.Action("Maths","Quiz")" />
+        </div>
+    }
+</body>
+
+

@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewBag.Title = "OneMoveTask3";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="~/Content/ChessStyleFolder/button.css">
+    <link rel="stylesheet" href="~/Content/ChessStyleFolder/chess.css">
+    <link rel="stylesheet" href="~/Content/ChessStyleFolder/list.css">
+    <link rel="stylesheet" href="~/Content/ChessStyleFolder/style.css">
+    <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+    <title>Chess</title>
+</head>
+
+
+<body class="home">
+    <div id="wrap">
+    </div>
+
+    <p id="tog">Мат в один ход</p>
+
+    <div id="ggg">
+        <div class="boxP">
+            <div class="Wbox">
+
+                <a href="@Url.Action("OneMoveTask1", "Chess")"><button id="A">мат в один ход</button></a>
+                <a href="@Url.Action("TwoMoveTask1", "Chess")"><button id="B">мат в два хода</button></a>
+                <a href="@Url.Action("BestMoveTask1", "Chess")"> <button id="C">найти лучший ход</button></a>
+            </div>
+            <div class="pushP">
+                <div id="image-slider">
+                    <ul>
+
+                        <div class="divv" id="row8">
+                        <li class="box" id="b801"></li>
+                        <li class="box" id="b802"></li>
+                        <li class="box" id="b803"></li>
+                        <li class="box" id="b804"></li>
+                        <li class="box" id="b805"></li>
+                        <li class="box" id="b806"></li>
+                        <li class="box" id="b807"></li>
+                        <li class="box" id="b808"></li>
+                </div>
+                <div class="divv" id="row7">
+                    <li class="box" id="b701"></li>
+                    <li class="box" id="b702"></li>
+                    <li class="box" id="b703"></li>
+                    <li class="box" id="b704"></li>
+                    <li class="box" id="b705"></li>
+                    <li class="box" id="b706"></li>
+                    <li class="box" id="b707"></li>
+                    <li class="box" id="b708"></li>
+                </div>
+                <div class="divv" id="row6">
+                    <li class="box" id="b601"></li>
+                    <li class="box" id="b602"></li>
+                    <li class="box" id="b603"></li>
+                    <li class="box" id="b604"></li>
+                    <li class="box" id="b605"></li>
+                    <li class="box" id="b606"></li>
+                    <li class="box" id="b607"></li>
+                    <li class="box" id="b608"></li>
+                </div>
+                <div class="divv" id="row5">
+                    <li class="box" id="b501"></li>
+                    <li class="box" id="b502"></li>
+                    <li class="box" id="b503"></li>
+                    <li class="box" id="b504"></li>
+                    <li class="box" id="b505"></li>
+                    <li class="box" id="b506"></li>
+                    <li class="box" id="b507"></li>
+                    <li class="box" id="b508"></li>
+                </div>
+                <div class="divv" id="row4">
+                    <li class="box" id="b401"></li>
+                    <li class="box" id="b402"></li>
+                    <li class="box" id="b403"></li>
+                    <li class="box" id="b404"></li>
+                    <li class="box" id="b405"></li>
+                    <li class="box" id="b406"></li>
+                    <li class="box" id="b407"></li>
+                    <li class="box" id="b408"></li>
+                </div>
+                <div class="divv" id="row3">
+                    <li class="box" id="b301"></li>
+                    <li class="box" id="b302"></li>
+                    <li class="box" id="b303"></li>
+                    <li class="box" id="b304"></li>
+                    <li class="box" id="b305">../../Images/ChessFolder/Chessmen/Bking</li>
+                    <li class="box" id="b306"></li>
+                    <li class="box" id="b307"></li>
+                    <li class="box" id="b308"></li>
+                </div>
+
+                <div class="divv" id="row2">
+                    <li class="box Wpawn" id="b201"></li>
+                    <li class="box Wpawn" id="b202"></li>
+                    <li class="box Wpawn" id="b203"></li>
+                    <li class="box Wpawn" id="b204"></li>
+                    <li class="box Wpawn" id="b205">../../Images/ChessFolder/Chessmen/Wpawn</li>
+                    <li class="box Wpawn" id="b206"></li>
+                    <li class="box Wpawn" id="b207"></li>
+                    <li class="box Wpawn" id="b208"></li>
+                </div>
+                <div class="divv" id="row1">
+                    <li class="box" id="b101">../../Images/ChessFolder/Chessmen/Wqueen</li>
+                    <li class="box" id="b102"></li>
+                    <li class="box" id="b103"></li>
+                    <li class="box" id="b104"></li>
+                    <li class="box" id="b105">../../Images/ChessFolder/Chessmen/Wking</li>
+                    <li class="box" id="b106"></li>
+                    <li class="box" id="b107"></li>
+                    <li class="box" id="b108"></li>
+                </div>
+                </ul>
+                <script src="~/Scripts/ChessScript/Checkmate in one move/Task3/chess.js"></script>
+            </div>
+        </div>
+        <div class="Vbox">
+
+            <div class="popup">
+                <a href="@Url.Action("OneMoveTask1", "Chess")"><button class="number-btn">1</button></a>
+                <a href="@Url.Action("OneMoveTask2", "Chess")"><button class="number-btn">2</button></a>
+                <a href="@Url.Action("OneMoveTask3", "Chess")"><button class="number-btn">3</button></a>
+                <a href="@Url.Action("OneMoveTask4", "Chess")"><button class="number-btn">4</button></a>
+                <a href="@Url.Action("OneMoveTask5", "Chess")"><button class="number-btn">5</button></a>
+            </div>
+            <button class="open-btn">список задач</button>
+
+            <button id="openModal1">подсказка</button>
+            <div id="myModal1" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Сделайте такой ход ферзём, чтобы контролировать клетки d4, e3, e4, f5</p>
+                </div>
+            </div>
+
+            <button id="openModal2">узнать ответ</button>
+            <div id="myModal2" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Фe5</p>
+                </div>
+            </div>
+
+            <div id="popup" style="display:none">
+                <span id="close" onclick="hidePopup()">×</span>
+                <p>Правильно!</p>
+
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/ChessScript/button.js"></script><!-- from js folder-->
+    <script src="~/Scripts/ChessScript/chess.js"></script>
+    <script src="~/Scripts/ChessScript/list.js"></script>
+
+    <div class="Sbox">
+        <a href="@Url.Action("OneMoveTask2", "Chess")">
+            <button class="arrow-btn">
+                <span class="arrow_1"></span>
+            </button>
+        </a>
+        <div class="push">
+            <a href="@Url.Action("OneMoveTask4", "Chess")">
+                <button class="arrow-btn">
+                    <span class="arrow_2"></span>
+                </button>
+            </a>
+        </div>
+    </div>
+</body>
+
+
+</html>
+

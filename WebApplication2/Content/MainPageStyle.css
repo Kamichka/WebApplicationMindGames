@@ -1,0 +1,70 @@
+﻿/* польза от наших игр */
+#featured-section h2 {
+    background: url(../Images/tagline.png) no-repeat;
+    width: 900px;
+    height: 55px;
+    text-indent: -9999px;
+    margin-top: 0;
+}
+
+/* выбор */
+#choice {
+    float: left;
+    margin: 50px 0 0 0;
+}
+
+    #choice h1 {
+        background: url(../Images/choice.png) no-repeat;
+        width: 900px;
+        height: 45px;
+        text-indent: -9999px;
+        margin-top: 0;
+    }
+
+#circles {
+    float: left;
+    margin: 10px 0 0 0;
+}
+
+    #circles img {
+        float: left;
+        margin: 0 0 0 36px;
+    }
+
+#featured-section .first {
+    margin-left: 0;
+}
+
+
+#featured-section #image-slider { /*,беляш появляется*/
+    width: 960px;
+    height: 300px;
+    margin: 10px 0 0 0; /*сдвиг беляша*/
+    border: 1px #ddd solid;
+    background-color: #fff;
+}
+
+#image-slider #mycarousel .picc {
+    margin: 10px 0 0 40px; /*размещение кнопок на беляше*/
+
+    width: 250px;
+    height: 186px;
+}
+
+#image-slider #mycarousel img {
+    padding: 5px; /*делает рамочку*/
+    border: 1px #ddd solid;
+    width: 250px;
+    height: 186px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.picc {
+    background-color: transparent;
+    border: none;
+    width: 280px;
+    height: 190px;
+}

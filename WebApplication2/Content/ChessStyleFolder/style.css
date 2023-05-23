@@ -1,0 +1,57 @@
+#wrap {
+	width: 960px;
+	margin: 8px;
+}
+
+#ggg {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+/*.home {
+	background: url(../Images/ChessFolder/Form/home-bg.png) repeat-x;
+}*/
+
+#header {
+	height: 113px;/*сдвигает всё от белой линни*/
+	padding: 22px 0 0 0;
+}
+
+/*Размещение стрелочек*/
+.Sbox {
+	display: flex;
+	margin: 20px 0px 0px 290px;
+}
+
+/* расстояние между стрелочками */
+.push {
+	margin: 0px 0px 0px 430px;
+}
+
+/*кнопки справа*/
+.Vbox {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 500px;
+}
+
+/*кнопки друг под другом*/
+.Wbox {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 170px;
+}
+
+/*кнопки слева*/
+.boxP {
+	display: flex;
+	margin: 20px 0px 0px 0px;
+}
+
+/* доска посередине */
+.pushP {
+	margin: 0px 100px 0px 100px;
+}
+

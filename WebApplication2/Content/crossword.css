@@ -1,0 +1,40 @@
+table {/*Стиль таблицы кроссворда*/
+    border: 1px solid black;
+}
+
+
+th {/*Стиль ячейки кроссворда*/
+    width: 43px;
+    height: 43px;
+    background: red;
+    border: 1px solid black;
+    position: relative;
+}
+
+.b {/*Стиль для черной ячейки*/
+    background: black;
+    cursor: not-allowed;
+}
+
+.w {/*Стиль для белой ячейки*/
+    background: white;
+}
+
+    .w:hover {/*Обработка наведения на белую ячейку*/
+        background: rgba(255,0,0,0.37);
+        cursor: grab;
+    }
+
+th span {/*размер цифры в ячейке кроссворда*/
+    font-size: 10px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+th b {/*размер букв в кроссворде*/
+    font-size: 30px;
+    color: black;
+}
+
+

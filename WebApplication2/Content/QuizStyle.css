@@ -1,0 +1,33 @@
+﻿
+
+#labcorrectanswer { /*Стиль для верного ответа*/
+    font-family: 'Comfortaa', cursive;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    color: forestgreen;
+    font-size: 16px;
+}
+
+.block { /*Стиль для блока с вопросами*/
+    border: 2px solid #ccc;
+    padding: 7px;
+    margin-bottom: 20px;
+    padding-top: 1px;
+    background-color: #f2f2f2;
+}
+
+#quiz_container { /*Стиль для размещения блоков с вопросами к викторине*/
+    margin: 0 auto;
+    width: 80%;
+    margin-left: 60px;
+}
+
+#result { /*Вывод результата прохождения викторины*/
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    margin-bottom: 8px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: darkslategrey;
+}

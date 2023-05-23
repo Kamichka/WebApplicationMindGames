@@ -1,0 +1,101 @@
+﻿#wrap {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.home { /*установка изображения для фона*/
+    background: url(../Images/home-bg.png) repeat-x;
+}
+
+#header {
+    height: 113px; /*сдвигает всё от белой линни*/
+    padding: 22px 0 0 0;
+}
+
+
+button { /*Стиль кнопок на сайте*/
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    margin-top: 40px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #FFBE8B;
+    color: black;
+    font-size: 17px;
+    border: 2px solid #808080;
+    box-shadow: 2px 2px 2px #808080;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover {/*Обработка наведения курсора на кнопку*/
+    background: #98FB98;
+    color: black;
+}
+
+.custom-button { /*Стиль кнопок выбора тем*/
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    margin-top: 40px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #FFBE8B;
+    color: black;
+    font-size: 17px;
+    border: 2px solid #808080;
+    box-shadow: 2px 2px 2px #808080;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.custom-button:hover {
+    background: #98FB98;
+    color: black;
+}
+
+#greeting {/*Стиль приветственного сообщения*/
+    font-family: 'Comfortaa', cursive;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333333;
+    text-align: center; /* Выравнивание по центру */
+    font-size: 20px; /* Увеличение размера шрифта */
+    font-weight: bold; /* Полужирный стиль */
+}
+
+.button-container {/*Стиль для вывода всех кнопок выбора темы*/
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#countriesButton {/*Выравнивание кнопок выбора темы */
+    margin-right: 80px;
+}
+
+#mathsButton { /*Выравнивание кнопок выбора темы */
+    margin-left: 80px;
+}
+
+
+#label1, #label2, #label3 { /*стиль для ответов к викторине*/
+    font-family: 'Comfortaa', cursive;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333333;
+}
+
+#quest { /*стиль для вопросов к викторине*/
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333333;
+}
+
+

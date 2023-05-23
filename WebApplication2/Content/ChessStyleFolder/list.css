@@ -1,0 +1,35 @@
+.popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+    .popup .number-btn {
+        display: inline-block;
+        margin: 5px 5px 5px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #FFBE8B;
+        cursor: pointer;
+    }
+
+        .popup .number-btn:hover {
+            background-color: #98FB98;
+            color: black;
+        }
+
+
+#close {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}

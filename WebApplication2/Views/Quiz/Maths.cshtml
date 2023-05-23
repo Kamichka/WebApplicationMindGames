@@ -1,0 +1,69 @@
+﻿@model List<WebApplication2.Models.QuizViewModel>
+@{
+    ViewBag.Title = "Maths"; // Установка заголовка страницы
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/QuizScript.js"></script> <!-- Подключение js скрипта для викторины -->
+
+<head>
+    <link type="text/css" rel="stylesheet" href="/Content/Site.css" /> <!-- Подключение внешнего стиля CSS -->
+    <link type="text/css" rel="stylesheet" href="~/Content/QuizStyle.css" /> <!-- Подключение внешнего стиля CSS -->
+</head>
+
+<!--Счетчик для номера вопроса-->
+@{ var questionNumber = 1; }
+
+<!--Создание коллекции объектов типа QuizViewModel-->
+@{
+    var cities = Model.Where(q => q.topic == "Математика");
+    var randomCities = cities.OrderBy(q => Guid.NewGuid()).Take(5);
+}
+
+<!--Размещение вопросов и вариантов ответа на странице-->
+<div id="quiz_container">
+    @foreach (var quiz in randomCities)
+    {
+        <div class="block">
+            <form id="quiz-form">
+                <label id="quest">@questionNumber. @quiz.question</label><br />
+
+                <input type="radio" id="1" name="first" value="@quiz.answer1" />
+                <label for="@quiz.answer1" id="label1" class="choice">@quiz.answer1</label><br />
+
+                <input type="radio" id="2" name="first" value="@quiz.answer2" />
+                <label for="@quiz.answer2" id="label2" class="choice">@quiz.answer2</label><br />
+
+                <input type="radio" id="3" name="first" value="@quiz.answer3" />
+                <label for="@quiz.answer3" id="label3" class="choice">@quiz.answer3</label><br />
+
+                <label id="labcorrectanswer" name="@quiz.id" class="radoption" style="display:none;"><b style="color:green;">Верный ответ: @quiz.correct_answer_num</b></label> <!--Скрытие верного ответа-->
+            </form>
+        </div>
+        { questionNumber++; }
+
+    }
+</div>
+
+
+<body>
+    <!--Кнопки для взаимодействия с пользователем-->
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        <button id="but_check" type="button" onclick="displayresult();"> Проверить</button>
+        <button id="but_see" type="button" onclick="GetAnswers();"> Ответы</button>
+        <button id="but_restart" type="button" onclick="restart()"> Начать заново </button>
+        <button id="but_newGame" type="button" onclick="NewGame();"> Новая игра</button>
+        <button id="but_back" type="button"> Назад</button>
+    }
+
+    <!--Возвращение на главную страницу викторин-->
+    <script>
+    document.getElementById("but_back").addEventListener("click", function() {
+    window.location.href = '@Url.Action("Index", "Quiz")';
+  });
+    </script>
+
+</body>
+
+<div id="result"></div>
+<label id="Selectedradio"></label>

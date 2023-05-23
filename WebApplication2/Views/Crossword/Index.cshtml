@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Index"; // Установка заголовка страницы
+}
+
+<head>
+    <link type="text/css" rel="stylesheet" href="/Content/Site.css" /> <!-- Подключение внешнего стиля CSS -->
+    <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css"> <!-- Подключение шрифта Corben -->
+    <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css"> <!-- Подключение шрифта Nobile -->
+</head>
+
+<meta charset="utf-8" /> <!-- Установка кодировки документа -->
+<div id="greeting">Soyez les bienvenus à la page des mots-croisés! Choisissez le sujet:</div> <!-- Приветственное сообщение -->
+
+<body>
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        <div class="button-container">
+            <input id="countriesButton" class="custom-button" type="submit" value="Les pays" formaction="@Url.Action("Countries","Crossword")" /> <!-- Кнопка для выбора темы "Les pays" -->
+            <input id="animalsButton" class="custom-button" type="submit" value="La nature" formaction="@Url.Action("Nature","Crossword")" /> <!-- Кнопка для выбора темы "La nature" -->
+            <input id="mathsButton" class="custom-button" type="submit" value="Les maths" formaction="@Url.Action("Maths","Crossword")" /> <!-- Кнопка для выбора темы "Les maths" -->
+        </div>
+    }
+</body>

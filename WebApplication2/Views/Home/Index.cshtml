@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<head>
+    <title>Mind Games</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="/Content/MainPageStyle.css" />
+
+</head>
+<body class="home">
+    <div id="wrap">
+        <div id="featured-section">
+            <h2> Польза от наших игр </h2>
+            <div id="circles"> <img class="first" src="/Images/circle-red.png" /> <img src="/Images/circle-pink.png" /> <img src="/Images/circle-orange.png" /> <img src="/Images/circle-yellow.png" /> </div>
+            <div id="choice">
+                <div id="image-slider">
+                    <h1> Выбери игру!</h1>
+                    <div id="mycarousel">
+
+                        <a href="@Url.Action("Index", "Quiz" )" class="picc">
+                            <img width="250" height="186" src="/Images/quiz.jpg" alt="Кнопка" />
+                        </a>
+                        <a href="@Url.Action("Index", "Crossword" )" class="picc">
+                            <img width="250" height="186" src="/Images/crossword.jpg" alt="Кнопка" />
+                        </a>
+
+                        <a href="@Url.Action("OneMoveTask1","Chess" )" class="picc">
+                            <img width="250" height="186" src="/Images/chess.jpg" alt="Кнопка" />
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+

@@ -1,0 +1,112 @@
+﻿@model WebApplication2.Models.CrosswordViewModel 
+
+
+@{
+    ViewBag.Title = "Maths"; // Установка заголовка страницы
+}
+
+@{
+    // Генерация случайного числа - номера кроссворда
+    int number = new Random().Next(1, 2);
+
+    // Получение массива строк, содержащих графическое представление кроссворда
+    string[] graphicalStrings = Model.Crosswords
+    .Where(c => c.topic == "Maths" && c.crossword_number ==number)
+    .OrderBy(c => c.id)
+    .Select(c => c.graphical)
+    .ToArray();
+
+    // Получение массива слов, используемых в кроссворде
+    string[] words = Model.Crosswords
+        .Where(c => c.topic == "Maths" && c.crossword_number == number)
+        .OrderBy(c => c.id)
+        .Select(c => c.word)
+        .ToArray();
+
+    // Создание словаря, связывающего координаты ячеек кроссворда с номерами слов
+    Dictionary<string, string> spansValue = Model.CrosswordCells
+    .Where(c => c.topic == "Maths" && c.crossword_number == number)
+    .OrderBy(c => c.id)
+    .ToDictionary(c => c.cell_coordinates, c => c.word_number);
+}
+
+@{
+    // Преобразование массивов в JSON-строки для передачи в JavaScript
+    string jsonData_graphical = Newtonsoft.Json.JsonConvert.SerializeObject(graphicalStrings);
+    string jsonData_words = Newtonsoft.Json.JsonConvert.SerializeObject(words);
+    string jsonData_spansValue = Newtonsoft.Json.JsonConvert.SerializeObject(spansValue);
+}
+
+
+<html>
+<head>
+    <title>Crossword</title>
+    <meta charset="UTF-8"> <!-- Установка кодировки документа -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script> <!-- Подключение js скриптов -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link type="text/css" rel="stylesheet" href="~/Content/style.css" /> <!-- Подключение внешнего стиля CSS -->
+    <link type="text/css" rel="stylesheet" href="~/Content/crossword.css" /> <!-- Подключение внешнего стиля CSS -->
+    <link type="text/css" rel="stylesheet" href="~/Content/Site.css" /> <!-- Подключение внешнего стиля CSS -->
+</head>
+
+<body class="home">
+
+    <div id="cross_quest">
+        <div class="push">
+
+            <script>
+                 // Передача данных в JavaScript
+                var values = @Html.Raw(jsonData_graphical);
+                var ans_key =@Html.Raw(jsonData_words);
+                var spans_value = @Html.Raw(jsonData_spansValue);
+            </script>
+
+            <div id="section">
+                <div id="carousel">
+                    <!--Вывод заголовка для горизонтальных слов-->
+                    <label id="quest">Horizontalement</label><br /><br />
+
+                    <!--Вывод вопросов для горизонтальных слов-->
+                    @foreach (var obj in Model.CrosswordQuestions.Where(q => q.topic == "Maths" && q.layout == "horizontal").OrderBy(q => q.id))
+                    {
+                        <label id="label1">@obj.question</label><br /><br />
+                    }
+
+                    <!--Вывод заголовка для вертикальных слов-->
+                    <label id="quest">Verticalement</label><br /><br />
+
+                    <!--Вывод вопросов для вертикальных слов-->
+                    @foreach (var obj in Model.CrosswordQuestions.Where(q => q.topic == "Maths" && q.layout == "vertical").OrderBy(q => q.id))
+                    {
+                        <label id="label1">@obj.question</label><br /><br />
+                    }
+                </div>
+            </div>
+            <div class="box">
+                <table id="table" cellspacing="0"></table>  <!--Вывод кроссворда-->
+                <script src="~/Scripts/CrosswordScript.js"></script>  <!--Подключение скрипта для кроссвордов-->
+            </div>
+
+        </div>
+    </div>
+
+    <!--Кнопки для взаимодействия с пользователем-->
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        <button id="but_check" type="button" onclick="key_check();"> Vérifier</button>
+        <button id="but_see" type="button" onclick="fillAnswers();"> Les reponses</button>
+        <button id="but_restart" type="button" onclick="restart();"> Refaire </button>
+        <button id="but_newGame" type="button" onclick="new_game();">Nouveau jeu</button>
+        <button id="but_back" type="button"> Revenir</button>
+
+    }
+    <!--Возвращение на главную страницу кроссвордов-->
+    <script>
+    document.getElementById("but_back").addEventListener("click", function() {
+    window.location.href = '@Url.Action("Index", "Crossword")';
+  });
+    </script>
+</body>
+
+</html>
+

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Установка кодировки документа -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+
+    <!-- Задание параметров масштабирования для мобильных устройств -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Заголовок -->
+    <title>@ViewBag.Title - Mind Games</title>
+
+    @*@Styles.Render("~/Content/css")*@
+    <!-- Подключение скрипта для браузеров -->
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Подключение файла стилей -->
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+</head>
+<body class="home">
+    <!-- Создание обертки для страницы -->
+    <div id="wrap">
+        <!-- Создание блока для шапки сайта -->
+        <div id="header">
+            <!-- Вставка логотипа -->
+            <img width="266" height="100" src="/Images/logo.png" />
+        </div>
+    </div>
+
+    <!-- Создание контейнера для контента страницы -->
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <!-- Подключение библиотеки jQuery, Bootstrap, вставка секции со скриптами -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
